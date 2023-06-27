@@ -1,0 +1,9 @@
+---
+subject: Welcome {{name}}
+title: Hello again
+---
+
+let's have {{what}}
+
+--
+office@acme.com

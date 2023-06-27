@@ -1,0 +1,14 @@
+---
+subject: Welcome {{name}}
+layout: basic
+title: Hello again,
+---
+
+Thank you for registering with us.
+Let's have a look what you can do now...
+
+If it wasn't you who pushed the button -- don't worry, 
+just ignore this message.
+
+--
+office@acme.com
