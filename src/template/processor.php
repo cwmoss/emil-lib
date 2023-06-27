@@ -6,6 +6,7 @@ use LightnCandy\LightnCandy;
 
 class processor {
     public string $basedir;
+    public array $opts;
     public array $stage = [];
 
     public array $parts = [];
@@ -18,8 +19,14 @@ class processor {
 
     public $subject = null;
 
-    public function __construct(public string $name, public array $opts = [], public $layout = "") {
+    public function __construct(public string $name, array $opts = [], public $layout = "") {
+        $opts = $opts + [
+            'frontparser' => new \Mni\FrontYAML\Parser,
+            'markdown' => new \Parsedown(),
+            'types' => ['md', 'txt', 'html']
+        ];
         $this->basedir = $opts['base'];
+        $this->opts = $opts;
         $this->load_helper($opts);
         $this->process_template($name);
     }
