@@ -26,7 +26,7 @@ function dbg($txt, ...$vars) {
     } else {
         $log[] = $txt;
     }
-    $log[] = join(' ', array_map('json_encode', $vars));
+    $log[] = join(' ', array_map(fn ($var) => json_encode($var, \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE), $vars));
     error_log(join(' ', $log));
 }
 
@@ -51,6 +51,7 @@ function array_delete($array, $idx) {
 }
 
 function get_trace_from_exception($e) {
+    $trace = "";
     $class = get_class($e);
     $pclass = get_parent_class($e);
     $m = $e->getMessage();
