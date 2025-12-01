@@ -2,6 +2,8 @@
 
 namespace emil\template;
 
+use function emil\dbg;
+
 class part {
 
     public string $post_process = '';

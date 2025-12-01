@@ -1,21 +1,21 @@
 <?php
 
-if (!function_exists('d')) {
-    function d(...$args) {
-        echo '<pre>';
-        foreach ($args as $arg) {
-            print_r($arg);
-        }
-        echo '</pre>';
+namespace emil;
+
+
+function d(...$args) {
+    echo '<pre>';
+    foreach ($args as $arg) {
+        print_r($arg);
     }
+    echo '</pre>';
 }
 
-if (!function_exists('dd')) {
-    function dd(...$args) {
-        d(...$args);
-        die;
-    }
+function dd(...$args) {
+    d(...$args);
+    die;
 }
+
 
 function dbg($txt, ...$vars) {
     // im servermodus wird der zeitstempel automatisch gesetzt
@@ -26,7 +26,7 @@ function dbg($txt, ...$vars) {
     } else {
         $log[] = $txt;
     }
-    $log[] = join(' ', array_map(fn ($var) => json_encode($var, \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE), $vars));
+    $log[] = join(' ', array_map(fn($var) => json_encode($var, \JSON_UNESCAPED_SLASHES | \JSON_UNESCAPED_UNICODE), $vars));
     error_log(join(' ', $log));
 }
 
@@ -36,6 +36,7 @@ function array_blocklist($arr, $block) {
     }
     return array_diff_key($arr, array_flip($block));
 }
+
 function array_search_fun($needle_fun, $haystack) {
     foreach ($haystack as $k => $v) {
         if (call_user_func($needle_fun, $v) === true) {

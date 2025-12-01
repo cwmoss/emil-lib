@@ -3,6 +3,7 @@
 namespace emil\template;
 
 use LightnCandy\LightnCandy;
+use function emil\dbg;
 
 class processor {
     public string $basedir;
