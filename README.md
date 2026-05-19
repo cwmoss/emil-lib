@@ -74,3 +74,9 @@ file under: {{category}}
 - mnapoli/front-yaml, frontmatter parsing
 - starter templates, salted by ..., simpleresponsive by leemunroe/responsive-html-email-template
 - acme logo by [Mackenzie Child](http://acmelogos.com/)
+
+
+#### dev
+
+??
+"zordius/lightncandy": "dev-master",

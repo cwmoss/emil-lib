@@ -11,7 +11,7 @@
         ]
     },
     "require": {
-        "zordius/lightncandy": "dev-master",
+        "zordius/lightncandy": "^1",
         "mnapoli/front-yaml": "^2.0",
         "erusev/parsedown": "^1.7",
         "symfony/mailer": "^6.2"
