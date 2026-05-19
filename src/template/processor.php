@@ -60,7 +60,7 @@ class processor {
                         // $hash = 'embed-' . md5($file) . '-embed';
                         $hash = md5($file);
                         $embeds[$hash] = $file;
-                        dbg('++ embed runtime', $context, $hash, $file);
+                        // dbg('++ embed runtime', $context, $hash, $file);
                         return 'cid:' . $hash;
                     }
                 ],

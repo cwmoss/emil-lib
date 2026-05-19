@@ -185,8 +185,8 @@ class mailer {
             if (preg_match('/^(.*?)([^ ]+@[^ ]+)?$/', trim($line), $mat)) {
                 $name = trim(str_replace('"', '', $mat[1]));
                 $email = trim($mat[2], '<>');
-                dbg("parsed address", $email, $name);
-                flush();
+                // dbg("parsed address", $email, $name);
+                // flush();
                 if ($name) {
                     $addrs[] = new Address($email, $name);
                 } else {
