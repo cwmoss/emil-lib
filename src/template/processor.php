@@ -141,7 +141,7 @@ class processor {
                             return $context;
                         },
                     ], $this->helper),
-                    'flags' => LightnCandy::FLAG_ERROR_LOG | LightnCandy::FLAG_RUNTIMEPARTIAL | LightnCandy::FLAG_ADVARNAME
+                    'flags' => LightnCandy::FLAG_ERROR_LOG | LightnCandy::FLAG_RUNTIMEPARTIAL | LightnCandy::FLAG_ADVARNAME | LightnCandy::FLAG_ELSE
                 ]
             );
             $part->set_runner(eval($code));
@@ -152,7 +152,7 @@ class processor {
     public static function process_string($str, $data, $helper = []) {
         $r = eval(LightnCandy::compile($str, [
             'helpers' => $helper,
-            'flags' => LightnCandy::FLAG_ERROR_LOG | LightnCandy::FLAG_RUNTIMEPARTIAL | LightnCandy::FLAG_ADVARNAME
+            'flags' => LightnCandy::FLAG_ERROR_LOG | LightnCandy::FLAG_RUNTIMEPARTIAL | LightnCandy::FLAG_ADVARNAME | LightnCandy::FLAG_ELSE
         ]));
         return $r($data);
     }
