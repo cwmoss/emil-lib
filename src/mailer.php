@@ -159,6 +159,8 @@ class mailer {
                     $message->from(...$h);
                 } elseif ($key == 'to') {
                     $message->to(...$h);
+                } elseif ($key == 'reply-to') {
+                    $message->replyTo(...$h);
                 } else {
                     // TODO: make address 
                     //  Argument #2 ($address) must be of type Symfony\Component\Mime\Address|string, array given
