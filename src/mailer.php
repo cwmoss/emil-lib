@@ -125,9 +125,10 @@ class mailer {
 
     public function header_from_data($data) {
         return [
-            'to' => $data['to'],
-            'from' => $data['from'],
-            'subject' => $data['subject']
+            'to' => $data['to'] ?? "",
+            'from' => $data['from'] ?? "",
+            'reply-to' => $data['reply-to'] ?? "",
+            'subject' => $data['subject'] ?? ""
         ];
     }
 
